@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b10" />
+  <meta name="description" content="Guess the memecoin from its silhouette." />
+  <title>Shadow Coin — Memecoin Silhouette Game</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header><div class="brand">■ SHADOW COIN</div><div id="score">0 PTS</div></header>
+    <section id="start" class="card start">
+      <div class="eyebrow">ANIMAL MEMECOIN EDITION</div>
+      <h1>Can you name the<br><span>memecoin?</span></h1>
+      <p>Recognize the animal meme from its silhouette. Faster guesses earn more points.</p>
+      <button id="startBtn">START GAME →</button>
+      <small>5 rounds · 15 seconds each · mobile friendly</small>
+    </section>
+
+    <section id="game" class="card hidden">
+      <div class="meta"><b id="round">ROUND 1 / 5</b><b id="streak">🔥 0</b></div>
+      <div class="progress"><i id="bar"></i></div>
+      <div class="imagebox">
+        <div id="timer">15</div>
+        <img id="meme" alt="Memecoin silhouette">
+        <div id="missing" class="missing hidden">Add this meme image to<br><code>public/memes/</code></div>
+      </div>
+      <div id="answers" class="answers"></div>
+      <div class="actions"><button id="hintBtn" class="secondary">HINT −250</button></div>
+      <div id="message" class="message"></div>
+    </section>
+
+    <section id="finish" class="card start hidden">
+      <div class="eyebrow">GAME OVER</div>
+      <h1>Your score<br><span id="finalScore">0</span></h1>
+      <p id="finalText"></p>
+      <button id="shareBtn">SHARE SCORE ON X</button>
+      <button id="againBtn" class="secondary">PLAY AGAIN</button>
+    </section>
+  </main>
+<script src="/game.js"></script>
+</body>
+</html>
