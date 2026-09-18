@@ -1,45 +1,148 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#080b10" />
-  <meta name="description" content="Guess the memecoin from its silhouette." />
-  <title>Shadow Coin — Memecoin Silhouette Game</title>
-  <link rel="stylesheet" href="/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090b10">
+  <meta name="description" content="Can you identify the animal memecoin from its silhouette?">
+  <title>Who's That Meme? — Memecoin Game</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
-  <main class="shell">
-    <header><div class="brand">■ SHADOW COIN</div><div id="score">0 PTS</div></header>
-    <section id="start" class="card start">
-      <div class="eyebrow">ANIMAL MEMECOIN EDITION</div>
-      <h1>Can you name the<br><span>memecoin?</span></h1>
-      <p>Recognize the animal meme from its silhouette. Faster guesses earn more points.</p>
-      <button id="startBtn">START GAME →</button>
-      <small>5 rounds · 15 seconds each · mobile friendly</small>
-    </section>
 
-    <section id="game" class="card hidden">
-      <div class="meta"><b id="round">ROUND 1 / 5</b><b id="streak">🔥 0</b></div>
-      <div class="progress"><i id="bar"></i></div>
-      <div class="imagebox">
-        <div id="timer">15</div>
-        <img id="meme" alt="Memecoin silhouette">
-        <div id="missing" class="missing hidden">Add this meme image to<br><code>public/memes/</code></div>
+<main class="shell">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-dot"></span>
+      WHO'S THAT MEME?
+    </div>
+
+    <div id="score">0 PTS</div>
+  </header>
+
+
+  <!-- START SCREEN -->
+
+  <section id="start" class="card start">
+
+    <div class="eyebrow">ANIMAL MEMECOIN EDITION</div>
+
+    <h1>
+      WHO'S THAT
+      <span>MEME?</span>
+    </h1>
+
+    <p>
+      A mystery memecoin is hiding in the shadows.
+      Can you recognize it before time runs out?
+    </p>
+
+    <button id="startBtn" class="primary">
+      START GAME →
+    </button>
+
+    <small>
+      5 rounds · 15 seconds · faster guesses = more points
+    </small>
+
+  </section>
+
+
+  <!-- GAME -->
+
+  <section id="game" class="card game hidden">
+
+    <div class="meta">
+      <b id="round">ROUND 1 / 5</b>
+      <b id="streak">🔥 0</b>
+    </div>
+
+    <div class="progress">
+      <i id="bar"></i>
+    </div>
+
+
+    <!-- MEME STAGE -->
+
+    <div id="stage" class="imagebox">
+
+      <div class="burst"></div>
+      <div class="burst-center"></div>
+
+      <div class="question-mark">?</div>
+
+      <div id="timer">15</div>
+
+      <img
+        id="meme"
+        class="shadow"
+        alt="Mystery memecoin"
+      >
+
+      <div id="missing" class="missing hidden">
+        Meme image missing
       </div>
-      <div id="answers" class="answers"></div>
-      <div class="actions"><button id="hintBtn" class="secondary">HINT −250</button></div>
-      <div id="message" class="message"></div>
-    </section>
 
-    <section id="finish" class="card start hidden">
-      <div class="eyebrow">GAME OVER</div>
-      <h1>Your score<br><span id="finalScore">0</span></h1>
-      <p id="finalText"></p>
-      <button id="shareBtn">SHARE SCORE ON X</button>
-      <button id="againBtn" class="secondary">PLAY AGAIN</button>
-    </section>
-  </main>
+
+      <!-- REVEAL TEXT -->
+
+      <div id="reveal" class="reveal hidden">
+        <small>IT'S</small>
+        <strong id="revealName">DOGE!</strong>
+      </div>
+
+    </div>
+
+
+    <!-- ANSWERS -->
+
+    <div id="answers" class="answers"></div>
+
+
+    <div class="actions">
+
+      <button id="hintBtn" class="secondary">
+        💡 HINT −250
+      </button>
+
+    </div>
+
+
+    <div id="message" class="message"></div>
+
+  </section>
+
+
+  <!-- FINISH -->
+
+  <section id="finish" class="card start hidden">
+
+    <div class="eyebrow">
+      GAME OVER
+    </div>
+
+    <h1>
+      FINAL SCORE
+      <span id="finalScore">0 PTS</span>
+    </h1>
+
+    <p id="finalText"></p>
+
+    <button id="shareBtn" class="primary">
+      SHARE SCORE ON X
+    </button>
+
+    <button id="againBtn" class="secondary">
+      PLAY AGAIN
+    </button>
+
+  </section>
+
+</main>
+
 <script src="/game.js"></script>
+
 </body>
 </html>
